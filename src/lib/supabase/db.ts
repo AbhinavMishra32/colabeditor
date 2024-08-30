@@ -18,10 +18,10 @@ const migrateDb = async () => {
         console.log('Migrating database...');
         const migrationsFolder = path.resolve(process.cwd(), 'migrations');
         await migrate(db, { migrationsFolder });
-        console.log('Successfully Migrated');
+        console.log('🟢 Successfully Migrated');
     }
     catch (error) {
-        console.error('Error Migrating client: ', error);
+        console.error('🔴 Error Migrating client: ', error);
     }
 };
 migrateDb().catch((error) => console.error(error));

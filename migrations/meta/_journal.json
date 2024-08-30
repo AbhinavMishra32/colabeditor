@@ -8,6 +8,20 @@
       "when": 1725007067181,
       "tag": "0000_third_power_man",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1725037323579,
+      "tag": "0001_rich_xorn",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1725041170397,
+      "tag": "0002_acoustic_mauler",
+      "breakpoints": true
     }
   ]
 }

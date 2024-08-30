@@ -17,10 +17,10 @@ if (!process.env.DATABASE_URL) {
 
 export default {
     dialect: 'postgresql',
-    driver: 'pglite',
+    // driver: 'pglite',
     schema: './src/lib/supabase/schema.ts',
     out: './migrations',
     dbCredentials: {
-        url: process.env.DATABASE_URL || '',
+        url: process.env.DATABASE_URL as string || '',
     },
 } satisfies Config;
