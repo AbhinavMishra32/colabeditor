@@ -1,5 +1,4 @@
 import React from 'react';
-import "../../app/globals.css";
 
 interface TitleSectionProps {
   title: string;
@@ -23,7 +22,15 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
         md:items-center
       "
       >
-        <article className="rounded-full p-[1px] text-sm dark:bg-gradient-to-r dark:from-colors-primary-blue/primary-blue-600 dark:to-colors-primary-purple/primary-purple-600">
+        <article
+          className="rounded-full
+          p-[1px]
+          text-sm
+          dark:bg-gradient-to-r
+          dark:from-brand-primaryBlue
+          dark:to-brand-primaryPurple
+        "
+        >
           <div
             className="rounded-full 
             px-3
@@ -47,8 +54,7 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
               {title}
             </h2>
             <p
-              className="dark:text-colors-washed-purple/washed-purple-700
-              sm:max-w-[450px]
+              className="dark:text-washed-purple-700 sm:max-w-[450px]
               md:text-center
             "
             >

@@ -54,8 +54,20 @@ body {
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
   }
-  .test {
-    --background: 249 100% 3.9%;
+}
+
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
