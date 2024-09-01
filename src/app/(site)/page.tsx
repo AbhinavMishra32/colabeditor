@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import Banner from '../../../public/appBanner.png';
 import { CLIENTS } from '@/lib/constants';
+import Cal from "../../../public/cal.png";
 
 export const HomePageLayout = () => {
   return (
@@ -118,6 +119,67 @@ export const HomePageLayout = () => {
             </div>
           ))}
         </div>
+      </section>
+      <section className='px-4
+      sm:px-6
+      flex
+      justify-center
+      items-center
+      flex-col
+      relative
+      '>
+        <div className='w-[30%]
+        blur-[120px]
+        rounded-full
+        h-32
+        absolute
+        bg-brand-primaryPurple/50
+        -z-10
+        top-22
+        ' />
+        <TitleSection title='Keep track of your meetings all in one place'
+        subheading='Capture your ideas, thoughts, and meeting notes in a structured and organized manner.' 
+        pill='Features' />
+        <div className='mt-10
+        max-w-[450px]
+        flex
+        justify-center
+        items-center
+        relative
+        sm:ml-0
+        rounded-2xl
+        border-8
+        border-washed-purple-300
+        border-opacity-10
+        '>
+          <Image src={Cal} alt= 'Banner' className='rounded-2xl' />
+        </div>
+      </section>
+      <section className='relative'>
+      <div className='w-full
+        blur-[120px]
+        rounded-full
+        h-32
+        absolute
+        bg-brand-primaryPurple/50
+        -z-10
+        top-56
+        ' /> 
+        <div className='mt-20
+        px-4
+        sm:px-6
+        flex
+        flex-col
+        overflow-x-hidden
+        overflow-visible
+        '>
+         <TitleSection
+            title="Trusted by all"
+            subheading="Join thousands of satisfied users who rely on our platform for their 
+            personal and professional productivity needs."
+            pill="Testimonials"
+          />
+          </div>
       </section>
     </>
   )
