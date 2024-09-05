@@ -9,6 +9,7 @@ import { randomUUID } from 'crypto';
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
 import CustomCard from '@/components/landing-page/custom-card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export const HomePageLayout = () => {
   return (
@@ -197,7 +198,10 @@ export const HomePageLayout = () => {
               dark:bg-gradient-to-t
               dark:from-border dark:to-background'
               cardHeader ={<div className='flex items-center gap-4'>
-                
+               <Avatar>
+                <AvatarImage src = {`/avatars/${index + 1 }.png`} />
+                <AvatarFallback>AV</AvatarFallback>
+                </Avatar> 
               </div>}
               ></CustomCard>))}
             </div>
