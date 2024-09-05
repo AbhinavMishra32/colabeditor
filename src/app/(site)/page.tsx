@@ -3,8 +3,12 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
 import Banner from '../../../public/appBanner.png';
-import { CLIENTS } from '@/lib/constants';
+import { CLIENTS, USERS } from '@/lib/constants';
 import Cal from "../../../public/cal.png";
+import { randomUUID } from 'crypto';
+import { twMerge } from 'tailwind-merge';
+import clsx from 'clsx';
+import CustomCard from '@/components/landing-page/custom-card';
 
 export const HomePageLayout = () => {
   return (
@@ -27,16 +31,16 @@ export const HomePageLayout = () => {
         from-primary 
         to-brand-primaryBlue 
         sm:w-[300px]'>
-            <Button variant='secondary'
+          <Button variant='secondary'
             className='w-full
             rounded-xl
             p-6
             text-2xl
             bg-background
             '
-            >Get Colab Editor Free</Button>
-          </div>
-          <div className='md:mt-[-90px]
+          >Get Colab Editor Free</Button>
+        </div>
+        <div className='md:mt-[-90px]
           sm:w-full
           w-[750px]
           flex
@@ -47,8 +51,8 @@ export const HomePageLayout = () => {
           sm:ml-0
           ml-[-50px]
           '>
-            <Image src={Banner} alt='Application Banner'/>
-            <div className='bottom-0
+          <Image src={Banner} alt='Application Banner' />
+          <div className='bottom-0
             top-[50%]
             bg-gradient-to-t
             dark:from-background
@@ -58,7 +62,7 @@ export const HomePageLayout = () => {
             z-10
             '></div>
 
-          </div>
+        </div>
       </section>
       <section className="relative">
         <div
@@ -138,8 +142,8 @@ export const HomePageLayout = () => {
         top-22
         ' />
         <TitleSection title='Keep track of your meetings all in one place'
-        subheading='Capture your ideas, thoughts, and meeting notes in a structured and organized manner.' 
-        pill='Features' />
+          subheading='Capture your ideas, thoughts, and meeting notes in a structured and organized manner.'
+          pill='Features' />
         <div className='mt-10
         max-w-[450px]
         flex
@@ -152,11 +156,11 @@ export const HomePageLayout = () => {
         border-washed-purple-300
         border-opacity-10
         '>
-          <Image src={Cal} alt= 'Banner' className='rounded-2xl' />
+          <Image src={Cal} alt='Banner' className='rounded-2xl' />
         </div>
       </section>
       <section className='relative'>
-      <div className='w-full
+        <div className='w-full
         blur-[120px]
         rounded-full
         h-32
@@ -164,7 +168,7 @@ export const HomePageLayout = () => {
         bg-brand-primaryPurple/50
         -z-10
         top-56
-        ' /> 
+        ' />
         <div className='mt-20
         px-4
         sm:px-6
@@ -173,13 +177,32 @@ export const HomePageLayout = () => {
         overflow-x-hidden
         overflow-visible
         '>
-         <TitleSection
+          <TitleSection
             title="Trusted by all"
             subheading="Join thousands of satisfied users who rely on our platform for their 
             personal and professional productivity needs."
             pill="Testimonials"
           />
-          </div>
+          {[...Array(2)].map((arr, index) => (
+            <div key={randomUUID()} className={twMerge(clsx('mt-10 flex flex-nowrap gap-6', {
+              'flex-row-reverse': index == 1,
+              'animate-[slide_250s_linear_infinite]': true,
+              'animate-[slide_250s_linear_infinite_reverse]': index === 1,
+              'ml-[100vw]': index === 1,
+            }), "hover:paused")} >
+              {USERS.map((testimonial, index) => (<CustomCard key={testimonial.name}
+                className='w-[500px]
+              shrink-0
+              rounded-xl
+              dark:bg-gradient-to-t
+              dark:from-border dark:to-background'
+              cardHeader ={<div className='flex items-center gap-4'>
+                
+              </div>}
+              ></CustomCard>))}
+            </div>
+          ))}
+        </div>
       </section>
     </>
   )
